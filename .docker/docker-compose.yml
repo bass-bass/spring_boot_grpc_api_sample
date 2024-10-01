@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  parser:
+    build: .
+    container_name: protoc-parser
+    hostname: protoc-parser
+    volumes:
+      - './proto:/proto'
+    tty: true
+    stdin_open: true

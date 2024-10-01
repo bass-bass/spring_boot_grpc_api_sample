@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: product
+---
+properties:
+  profiles: product
+  other:
+    dataLoadSpan: 300s
+    alertUsedMemoryRate: 70
+    dataDir: /var/app/data

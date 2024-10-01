@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_outer_classname = "Rpc";
+option java_package = "com.example.grpc.api.rpc";
+option java_generic_services = true;
+
+service RpcService {
+  rpc execute (RpcRequest) returns(RpcResponse);
+}
+
+message RpcRequest {
+	required string control = 1;
+	required string action = 2;
+	optional string data_json = 3;
+	optional bytes data_binary = 4;
+}
+
+message RpcResponse {
+	required bool success = 1;
+	optional string data_json = 3;
+	optional bytes data_binary = 4;
+}
