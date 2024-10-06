@@ -15,7 +15,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - run: mvn spotless:apply
+      - run: ./mvnw spotless:apply
       - uses: reviewdog/action-suggester@v1
         with:
           tool_name: spotless

@@ -1,6 +1,5 @@
-package com.example.grpc.api.my;
+package com.example.grpc.api.my.service;
 
-import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.grpc.api.common.data.MyData;
@@ -11,15 +10,17 @@ import com.example.grpc.api.rpc.Rpc;
 import com.example.grpc.api.rpc.RpcServiceGrpc;
 
 import io.grpc.stub.StreamObserver;
+import net.devh.boot.grpc.server.service.GrpcService;
 
-@GRpcService
-public class MyService extends RpcServiceGrpc.RpcServiceImplBase {
-  private final Logger logger = Logger.getLogger(MyService.class.getSimpleName());
+@GrpcService
+public class MyServerService extends RpcServiceGrpc.RpcServiceImplBase {
+  private final Logger logger = Logger.getLogger(MyServerService.class.getSimpleName());
 
   @Autowired private MyData myData;
 
   @Override
   public void execute(Rpc.RpcRequest request, StreamObserver<Rpc.RpcResponse> responseObserver) {
+    System.out.println("MyService.execute() start");
     MyRequestDTO reqDto = MyRequestDTO.fromJson(request.getDataJson());
     logger.info("request json : " + request.getDataJson());
 

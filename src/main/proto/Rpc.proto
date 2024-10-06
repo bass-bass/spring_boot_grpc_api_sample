@@ -1,11 +1,12 @@
 syntax = "proto3";
 
+package com.example.grpc.api.rpc;
 option java_outer_classname = "Rpc";
 option java_package = "com.example.grpc.api.rpc";
 option java_generic_services = true;
 
 service RpcService {
-  rpc execute (RpcRequest) returns(RpcResponse);
+  rpc execute (RpcRequest) returns (RpcResponse);
 }
 
 message RpcRequest {

@@ -1,10 +1,22 @@
+server:
+  port: 8080
 spring:
+  application:
+    name: my-grpc-server
   profiles:
     active: product
----
 properties:
   profiles: product
   other:
     dataLoadSpan: 300s
     alertUsedMemoryRate: 70
     dataDir: /var/app/data
+grpc:
+  server:
+    port: 6565
+  client:
+    my-grpc-server:
+      address: 'static://127.0.0.1:6565'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext

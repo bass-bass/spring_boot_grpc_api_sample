@@ -12,7 +12,7 @@ public final class RpcServiceGrpc {
 
   private RpcServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "RpcService";
+  public static final java.lang.String SERVICE_NAME = "com.example.grpc.api.rpc.RpcService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.example.grpc.api.rpc.Rpc.RpcRequest,
